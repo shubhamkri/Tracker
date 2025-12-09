@@ -1,0 +1,19 @@
+/* Hide Streamlit Style */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* Page Background Added */
+[data-testid="stAppViewContainer"] {
+    background-color: #f7444455;
+    opacity: 0.8;
+    
+}
