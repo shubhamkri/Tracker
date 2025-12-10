@@ -1,2 +1,5 @@
-image = "nginx:latest"   # Replace with your Docker image
-port  = 8080             # Optional; defaults to 8501 if omitted
+image_name    = "expense-tracker:latest"
+dockerfile    = "Dockerfile"
+build_context = "."
+internal_port = 8501
+external_port = 8501

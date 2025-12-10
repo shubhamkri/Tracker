@@ -9,11 +9,20 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_container" "app" {
-  name  = "my_app"
-  image = var.image
+resource "docker_image" "app_image" {
+  name = var.image_name
+  build {
+    context    = var.build_context
+    dockerfile = var.dockerfile
+  }
+}
+
+resource "docker_container" "app_container" {
+  name  = "streamlit_app"
+  image = docker_image.app_image.name   # ✅ use .name
+
   ports {
-    internal = var.port
-    external = var.port
+    internal = var.internal_port
+    external = var.external_port
   }
 }
