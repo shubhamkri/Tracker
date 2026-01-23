@@ -88,3 +88,22 @@ class FamilyExpenseTracker:
 if __name__ == "__main__":
     expense_tracker = FamilyExpenseTracker()
 
+    # Add family members
+    expense_tracker.add_family_member("Father", True, 50000)
+    expense_tracker.add_family_member("Mother", True, 30000)
+    expense_tracker.add_family_member("Brother", False, 0)
+
+    # Add expenses
+    expense_tracker.add_expense(5000, "Rent", "House rent", "2026-01-01")
+    expense_tracker.add_expense(2000, "Groceries", "Monthly groceries", "2026-01-05")
+
+    # Print members
+    print("👨‍👩‍👧 Family Members:")
+    for m in expense_tracker.members:
+        print(m)
+
+    # Print totals
+    print("\n💰 Total Earnings:", expense_tracker.calculate_total_earnings())
+    print("💸 Total Expenditure:", expense_tracker.calculate_total_expenditure())
+
+
