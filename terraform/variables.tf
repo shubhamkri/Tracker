@@ -1,7 +1,7 @@
 variable "image_name" {
   description = "Docker image to run"
   type        = string
-  default     = "expense-tracker:latest"
+  default     = "expense_tracker:latest"
 }
 
 variable "dockerfile" {

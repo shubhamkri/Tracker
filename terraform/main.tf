@@ -9,12 +9,15 @@ terraform {
 
 provider "docker" {}
 
-# Docker image from DockerHub
 resource "docker_image" "expense_tracker" {
-  name = var.image_name
+  name = "expense-tracker:latest"
+
+  build {
+    context    = "."
+    dockerfile = "Dockerfile"
+  }
 }
 
-# Run container
 resource "docker_container" "app_container" {
   name  = "expense_tracker_app"
   image = docker_image.expense_tracker.name
